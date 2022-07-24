@@ -10,14 +10,68 @@
 </head>
 <body>
   <div id="room-container">
-    <% Object.keys(rooms).forEach(room => { %>
-      <div><%= room %></div>
-      <a href="/<%= room %>">Join</a>
-    <% }) %>
+    <form action="/room" method="POST" id="room-form">
+      <input name="room" type="text" required id="room-input">
+      <button type="submit" id="create-room-btn">New Room</button>
+    </form>
+    <div>
+      <% Object.keys(rooms).forEach(room => { %>
+        <div>
+        <a href="/<%= room %>">Join:</a>
+        <span><%= room %></span>
+        </div>
+      <% }) %>
+    </div>
   </div>
-  <form action="/room" method="POST">
-    <input name="room" type="text" required>
-    <button type="submit">New Room</button>
-  </form>
 </body>
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #4a5162;
+  }
+
+  #room-container {
+    width: 80%;
+    max-width: 640px;
+    margin-top: 1em;
+  }
+
+  #room-container div {
+    background-color: #FFF;
+    color: rgba(0, 0, 255, 0.4);
+    margin-bottom: 0.5em;
+    padding: 5px;
+    border-radius: 0.5em;
+  }
+
+  #room-container div:nth-child(2n) {
+    background-color: #FFF;
+    color: rgba(0, 0, 255, 0.4);
+  }
+
+  #room-form {
+    /*position: fixed;*/
+    margin-bottom: 30px;
+    bottom: 0;
+    max-width: 640px;
+    width: 100%;
+    display: flex;
+  }
+
+  #room-input {
+    flex-grow: 1;
+    border: 0px solid #FFF;
+    border-radius: 0.5em;
+    margin-right: 0.5em;
+    padding: 0.4em;
+  }
+
+  #create-room-btn {
+    border: 0px solid #FFF;
+    border-radius: 0.5em;
+  }
+</style>
 </html>

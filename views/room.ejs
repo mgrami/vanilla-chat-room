@@ -10,42 +10,6 @@
   </script>
   <script defer src="/socket.io/socket.io.js"></script>
   <script defer src="script.js"></script>
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    #message-container {
-      width: 80%;
-      max-width: 1200px;
-    }
-
-    #message-container div {
-      background-color: #CCC;
-      padding: 5px;
-    }
-
-    #message-container div:nth-child(2n) {
-      background-color: #FFF;
-    }
-
-    #send-container {
-      position: fixed;
-      padding-bottom: 30px;
-      bottom: 0;
-      background-color: white;
-      max-width: 1200px;
-      width: 80%;
-      display: flex;
-    }
-
-    #message-input {
-      flex-grow: 1;
-    }
-  </style>
 </head>
 <body>
   <div id="message-container"></div>
@@ -54,4 +18,54 @@
     <button type="submit" id="send-button">Send</button>
   </form>
 </body>
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #4a5162;
+  }
+
+  #message-container {
+    width: 80%;
+    max-width: 640px;
+    margin-top: 1em;
+  }
+
+  #message-container div {
+    background-color: #FFF;
+    color: rgba(0, 0, 255, 0.4);
+    margin-bottom: 0.5em;
+    padding: 5px;
+    border-radius: 0.5em;
+  }
+
+  #message-container div:nth-child(2n) {
+    background-color: #FFF;
+    color: rgba(0, 0, 255, 0.4);
+  }
+
+  #send-container {
+    position: fixed;
+    margin-bottom: 30px;
+    bottom: 0;
+    max-width: 640px;
+    width: 80%;
+    display: flex;
+  }
+
+  #message-input {
+    flex-grow: 1;
+    border: 0px solid #FFF;
+    border-radius: 0.5em;
+    margin-right: 0.5em;
+    padding: 0.4em;
+  }
+
+  #send-button {
+    border: 0px solid #FFF;
+    border-radius: 0.5em;
+  }
+</style>
 </html>
